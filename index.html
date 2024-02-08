@@ -21,5 +21,21 @@
     <p>My favorite part of the day is the evening. I love to relax and unwind after a long day. I also enjoy spending time with my family and friends in the evening. It's a great way to end the day and I always feel happy and content after a relaxing evening.</p>
     <p>What is your favorite part of the day?</p>
 
+
+    <h2>What is your favorite part of the day?</h2>
+    <form action="index.php" method="post">
+        <input type="radio" name="partOfDay" value="morning"> Morning<br>
+        <input type="radio" name="partOfDay" value="afternoon"> Afternoon<br>
+        <input type="radio" name="partOfDay" value="evening"> Evening<br>
+        <input type="radio" name="partOfDay" value="night"> Night<br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <?php
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $partOfDay = $_POST["partOfDay"];
+            echo "<h3>Your favorite part of the day is $partOfDay</h3>";
+        }
+    ?>
 </body>
 </html>
